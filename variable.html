@@ -1,0 +1,708 @@
+<html><head>
+
+<!-- 本页面由 xiaoyaona(Artificial heaven)保存 -->
+
+<title>变量说明</title>
+
+</head>
+<body style="zoom: 1;">
+
+<pre><font size="3" color="red">更新日期：<b>2020-4-4</b></font>
+
+<font size="2" color="red">详细变量说明：</font><a href="https://web.archive.org/web/20200810084155/https://www.mgxfd.club/42.html">详细说明</a>
+<font size="2" color="red">EPK代码编辑器：</font><a href="https://web.archive.org/web/20200810084155/http://myepk.club/DL/epk_Editor.zip">EPK Editor</a>
+
+
+<font size="2" color="blue"><b>说明：</b></font>
+<font size="2" color="blue">1.[] 当括起来的表示为参数时，<b>请勿加[]</b>，需要加的一般有说明。</font>
+<font size="2" color="blue">2.() 括起来的表示可有可无，请勿加()。</font>
+<font size="2" color="blue">3./  表示或者，只能从多个中选择一个。</font>
+<font size="2" color="blue">4.可空参数都可以连带着前面的分割符('&gt;=&lt;'或'-')一起省略(前提是省略后不影响后续参数)</font>
+<font size="2" color="blue">5.如果没有说明，则变量只在回复中生效。</font>
+<font size="2" color="blue">6.兼容所有酷Q码：</font><a href="https://web.archive.org/web/20200810084155/https://d.cqp.me/Pro/CQ%E7%A0%81">酷Q框架码</a>
+<font size="2" color="blue">7.快捷搜索：<b> Ctrl + F</b></font>
+
+
+&gt;常用变量&lt;
+<font color="red">【艾特】</font>变量说明：
+<font color="red">【艾特】</font>放在关键词中，表示 艾特机器人。
+<font color="red">【艾特】</font>放在回复中，表示 艾特发送者。
+如果想艾特指定人，[CQ:at,qq=xxx] xxx改为要@的人的QQ就行了。
+
+<font color="red">【内容】</font>变量说明：
+<font color="red">【内容】</font>填写在回复中，表示子关键词，子关键词与匹配规则相关，具体见下个说明（匹配规则说明）。
+<font color="red">【子关键词=[内容]】</font> 可以把[内容]赋值给变量【内容】
+
+&gt;匹配规则说明&lt;
+<font color="red">完全匹配</font> 所设关键词和发言一致时(区分大小写)，匹配成功。完全匹配不存在子关键词。
+<font color="red">模糊匹配</font> 所设关键词包含于发言中(不区分大小写)，匹配成功。子关键词是发言中非关键词的部分。
+<font color="red">前缀匹配</font> 所设关键词是发言的前缀(区分大小写)，匹配成功。子关键词是发言中的非前缀的部分。
+<font color="red">正则匹配</font> 所设关键词(即表达式)与发言相匹配时（匹配规则为完全匹配），匹配成功。子关键词是第一个子表达式(第一对英文括号括起来的表达式)所匹配的内容。
+若想取出其余子表达式匹配的结果，可用：<font color="red">【内容x】</font>，其代表正则表达式匹配的第x个子表达式匹配的文本。
+
+&gt;高级匹配规则&lt;
+<font color="red">多匹配规则</font>：
+在前三个匹配规则中，关键词添加前缀[多条]，即可开启多匹配。多匹配规则中，多个关键词之间用"|"分隔，只要其中一个关键词匹配，即匹配。
+若要匹配"|"，用"#hz"代替。与"||"分割符不同的是，用"||"分割实际是自动添加多条回复，而本规则只在同一条回复下。
+<font color="red">正则的查找匹配规则</font>：
+在最后一个匹配规则(正则匹配)中，关键词添加前缀[查找]，即可开启查找匹配。
+<font color="red">查找匹配规则</font>：
+当表达式所能匹配的文本在发言中，即为匹配。（不加[查找]是完全匹配规则，即表达式完全与发言相匹配）
+
+在回复中，以下变量将被替换为特定内容
+<font color="red">【换行】</font> 即换行符。
+<font color="red">【关键词】</font>即匹配到的关键词
+<font color="red">【头像(-大/中/小/超小)】</font>发送者QQ头像,省略默认为“-中”。
+<font color="red">【随机表情】</font>随机一个表情
+<font color="red">【msgID】</font> 触发消息的ID。
+<font color="red">【msg】</font> 触发的消息。
+<font color="red">【msg [ID]】</font> 获取指定ID的消息，当[ID]为负数或0时，获取向前第[ID]条消息。
+当[ID]为正数时，获取指定msgID为[ID]的消息。注意msg后要加空格。
+<font color="red">【当前群号/群名/群人数/群上限】</font>发送者所在群号/群名/群人数/群人数上限
+<font color="red">【发送者QQ/昵称】</font>发送者的QQ/昵称
+<font color="red">【权限】</font>发送者权限。分别为：主人/群主/群管/管理/群员
+<font color="red">【机器人名字/QQ】</font>机器人的昵称/QQ
+<font color="red">【发送者名片/性别/年龄/地区/加群时间/发言时间/管理权限/专属头衔/活跃等级】</font>
+取发送者的特定信息，只能在群聊下触发。
+注：加群/发言时间取出来的是时间戳。 管理权限分为：群主/管理/成员。 活跃等级即活跃头衔的名称。
+
+&gt;转义&lt;
+注意：<font color="red">【  】  * </font>    这三个符号填写在回复中有特殊含义
+<font color="red">【】</font> 括起来的内容将被自动转义，如果未匹配返回空文本。
+<font color="red"> * </font> 是用来分割多个回复。
+如果需要发送这些字符请先替换为对应的转义字符
+#zzk    代表【
+#yzk    代表】
+#xh     代表*
+<font color="red">【反转义xxx】</font>  将xxx中的#zzk #yzk #fgf 转义为【 】 &gt;=&lt;。
+<font color="red">【转义xxx】</font>  将xxx中的【 】转义为#zzk #yzk。
+<font color="red">【CQ反转义xxx】</font>  将xxx中的 &amp;amp; &amp;#91; &amp;#93; 转义为 &amp; [ ] 
+<font color="red">【CQ转义xxx】</font>  将xxx中的 &amp; [ ] 转义为 &amp;amp; &amp;#91; &amp;#93;
+
+&gt;事件变量&lt;
+下面变量请填到关键词中，接收到对应事件后会调用对应关键词下的回复(请带上[])。
+<font color="red">[被撤管理]</font> 被撤销管理时调用，被撤销者相当于发送人
+<font color="red">[提升管理]</font> 被提升管理时调用，被提升者相当于发送人
+<font color="red">[群员被踢]</font> 群员被踢时被调用，被踢出者相当于发送人
+<font color="red">[群员离群]</font> 群员离开群时调用，离群者相当于发送人
+<font color="red">[群员入群]</font> 群员加入群时调用，入群者相当于发送人
+<font color="red">[上传文件]</font> 上传群文件时调用，上传者相当于发送人
+<font color="red">[已加好友]</font> 被添加好友时调用，添加者相当于发送人
+<font color="red">[禁言事件]</font> 群员被禁言或解禁时调用，被禁言/解禁者相当于发送人。如果为全员禁言/解禁则发送人为 0 
+注释：这里的发送人是指，相当于他触发了这个关键词。
+<font color="red">[初始化xx]</font> xx可自定义，自定义在启动时将调用所有的初始化事件。注意需要设置群聊触发。
+<font color="red">[退出xxx]</font> xx可自定义，自定义在退出或停用时调用所有的退出事件。注意需要设置群聊触发。
+
+在<font color="red">[群员被踢]、[群员入群]</font>事件下，<font color="red">【内容】</font>表示操作者QQ
+在<font color="red">[上传文件]</font>事件下，<font color="red">【内容】</font>表示上传文件名称，<font color="red">【内容2】</font>表示长传文件的大小。
+在<font color="red">[禁言事件]</font>事件下，<font color="red">【内容】</font>表示禁言时间（单位秒），为0表示解禁；<font color="red">【内容2】</font>表示操作者。
+
+
+&gt;群管变量&lt;
+以下变量填在回复中，触发对应关键词后，让机器人去做对应的事件（默认被操着者为发送人）
+<font color="red">【禁言[时间](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[QQ])】</font>触发后，禁言[QQ][时间]分钟, [时间]为0时表示解禁，省略默认[QQ]为触发者
+<font color="red">【踢出(QQ)】</font>触发后，踢出[QQ]，省略默认[QQ]为触发者
+<font color="red">【永久踢出(QQ)】</font>触发后，踢出[QQ]（同时设置不在接受入群请求），省略默认[QQ]为触发者
+<font color="red">【拉黑(QQ)】</font>拉黑[QQ] ，省略默认[QQ]为触发者
+<font color="red">【拉黑-警告(QQ)】</font>警告[QQ] 上限后拉黑，省略默认[QQ]为触发者
+<font color="red">【踢出-警告(QQ)】</font>警告[QQ] 上限后踢出，省略默认[QQ]为触发者
+<font color="red">【点赞(QQ)】</font> 点赞[QQ]，省略默认[QQ]为触发者
+<font color="red">【改名片[QQ]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[改后名片]】</font> 更改[QQ]的群名片为[改后名片]
+<font color="red">【设头衔[头衔名称](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[有效时间]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[被改QQ])】</font> 更改[被改QQ]头衔为[头衔名称]持续[有效时间]天。(有效时间暂时无用!)
+<font color="red">【设管理[被设QQ](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取消])】</font> 加上后面的，取消管理，否则设为管理。
+<font color="red">【撤回(msgID)】</font> 撤回ID为msgID的消息。省略默认撤回触发回复的消息。
+<font color="red">【艾特全体】</font>艾特全体成员
+
+&gt;系统处理&lt;
+<font color="red">【cmd ([等待])[命令]】</font>执行CMD命令。 如：<font color="red">【cmd notepad】</font>  （运行记事本）
+<font color="red">【运行([等待])[命令]】</font>让windows运行指定命令（将根据输入的[命令]打开相应程序/文件夹/文档/Internet资源）。
+<font color="red">       [等待]说明：</font>[命令]前加上[等待]系统将等待命令执行结束。这里[]不要省略。不加则不等待执行结束。
+<font color="red">【dos [命令行]】</font>取系统DOS执行结果。注意: 该命令会阻塞 ,一直到cmd中的内容执行完毕后才会返回。
+<font color="red">【延时[秒]】</font>表示让系统等待[秒]秒后继续执行。
+<font color="red">【延迟[秒]】</font>同上，在Web函数操作中请使用【延迟】代替【延时】。
+<font color="red">【调试[待调试内容]】</font>在日志中输出[待调试内容]。
+<font color="red">【线程执行[函数名]】</font>启动一个新的线程来执行函数名为[函数名]的函数。
+<font color="red">[执行时间]</font>代表回复代码执行的时间。
+<font color="red">【挂起[分钟]】</font>将后续代码延迟[分钟]后执行(若要发送请使用输出流)，前面代码立即输出。本变量不占用线程，可无限添加。
+<font color="red">【许可-创建】</font>创建并返回一个进入许可证ID数值，此许可证ID值用作进入程序中的指定许可代码区，以避免多线程冲突。
+成功返回非零整数值，失败返回0，推荐在初始化事件下使用，并且赋值给常量。
+<font color="red">【许可-进入[许可证ID]】</font>根据已经创建的许可证进入指定许可代码区。
+在此线程未退出之前，其它线程如要通过同一个进入许可证进入该许可代码区则必须先等待此线程退出许可代码区，从而保证了指定许可代码区在任何时候都只能有一条线程进入并执行。
+<font color="red">【许可-退出[许可证ID]】</font> 指示当前线程将退出许可代码区，并允许其它使用同一进入许可证的线程进入此许可代码区。
+<font color="red">【许可-删除[许可证ID]】</font> 删除由“可证-创建”函数所创建返回的许可证。
+
+
+&gt;私聊变量&lt;
+<font color="red"> [私聊xxx]</font>说明：
+<font color="red"> [私聊XXX]</font>向指定人(XXX)发送此变量后面的信息，前面的正常发送。 
+<font color="red"> [私聊XXX]</font>需要加[]，xxx可以为【发送者QQ】，来私聊触发者。
+
+&gt;回复限制&lt;
+<font color="red"> 说明：</font>填写在回复中，限制该条回复。
+<font color="red">【一天上限[次数]】</font>填在回复中，表示该关键词单Q一天只能触发[次数]次
+<font color="red">【一周上限[次数]】</font>填在回复中，表示该关键词单Q一周只能触发[次数]次
+<font color="red">【一月上限[次数]】</font>填在回复中，表示该关键词单Q一月只能触发[次数]次
+<font color="red">【一次间隔[时间]】</font>填在回复中，表示该关键词在[时间]分钟内只能触发1次
+<font color="red">【回复间隔[时间]】</font>经过[时间]秒后，才可继续触发下一条含有回复间隔的回复。在此期间，无法触发含有回复间隔的回复。
+
+&gt;主人/群管回复&lt;
+<font color="red">说明：</font>填写在回复中，符合指定条件的人才可以触发本条回复。
+<font color="red">【主人】</font>只有主人才能触发此条回复。
+<font color="red">【群管】</font>只有主人或当群群管（机器人管理而非群管理员）才能触发此条回复。
+<font color="red">【管理】</font>只有管理或群主或群管或主人才能触发此条回复。
+
+&gt;链转图片&lt;
+<font color="red">【图片[来源]】</font>说明：
+<font color="red">【图片[来源]】</font>填在回复中，将[来源]转变成图片发送。来源可以是文件路径，可以是资源URL。
+当[来源]填写为某个文件夹的路径时，则从该文件夹下随机一个文件转变成图片发送。
+
+&gt;链转语音&lt;
+<font color="red">【语音[来源]】</font>说明：
+<font color="red">【语音[来源]】</font>填在回复中，将[来源]转变成语音发送。来源可以是文件路径，可以是资源URL。
+当[来源]填写为某个文件夹的路径时，则从该文件夹下随机一个文件转变成语音发送。
+
+&gt;本地词库&lt;
+<font color="red">说明：</font> 下述三类变量将调用本地的文本词库。
+<font color="red">词库统一格式：</font><a href="https://web.archive.org/web/20200810084155/http://myepk.club/ck.txt">自定义词库格式</a>
+<font color="red">词库编码必须为<b>ANSI编码</b>（即 GB系列编码）</font>
+<font color="red">【本地词库】</font>说明：
+<font color="red">【本地词库】</font>填写在回复中，如果触发变量，则从词库中找出与子关键词匹配的回复（子关键词包含词库中的关键词即为匹配），之后从所有匹配中随机取出一条，同时将取出的回复的行数赋值到【行序】变量中。
+<font color="red">【本地词库[词库路径]】</font>则表示调用路径更改为[词库路径]，省略[词库路径]调用数据目录下的"本地词库.txt"
+<font color="red">【高级词库】</font>说明：
+<font color="red">【高级词库[词库路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取出格式]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[匹配方式]】</font> 即本地词库的升级版，详见参数。
+<font color="red">[取出格式]</font> 可为(-)topX/botX/rdmX/all/X；X代表数值，前面"-"(负号)可有可无，总共10中组合方式：
+topX：取出符合的前X条；-topX：取出符合的前X条，并且取出结果反转（即结果顺序反转）
+botX：取出底部X条；rdmX：取出随机X条；all：取出全部。前面加上"-"结果反转。
+X(单独的一个数)：取出第X条符合的；为负取出倒数第|X|条；为1时执行效率最高，同时还将取出的回复的行数赋值到【行序】变量中。
+<font color="red">[匹配方式]</font> 即按照什么样的匹配规则来判断匹配。可选参数如下：
+模糊匹配、完全匹配、前缀匹配、绝对正则、查找正则。
+前三者：子关键词包含词库中的关键词/子关键词的前缀是词库中的关键词/子关键词和词库中的关键词相同，即匹配。
+绝对正则：子关键词完全符合表达式即匹配。查找正则：只要子关键词中的某段文本符合表达式即匹配。
+省略第一个参数，则词库路径默认为应用目录下的 高级词库.txt。省略第二个参数，随机取出一条。省略第三个参数，默认模糊匹配。
+<font color="red">【标签词库】</font>说明：
+<font color="red">【标签词库】</font>填写在回复中，如果触发变量，则从标签词库中找出与标签符合的内容（子关键词包含标签词库中的标签即为符合）
+（包含的标签越多，符合度越高，结果按照符合度从高到低排序），之后从所有结果中取出符合指定符合度的指定条。
+<font color="red">【标签词库[标签词库路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取出最大条数]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取出最小符合度]】</font>取出[标签词库路径]中，[取出最大条数]条子关键词中最少含有标签[取出最小符合度]个标签的一系列记录。
+[取出最小符合度]指的是：子关键词包含一个标签即一个符合度，筛选出子关键词中至少含有[取出最小符合度]个标签的记录。
+省略第一个参数，则词库路径默认为应用目录下的 标签词库.txt。省略第二个参数，取出所有符合的。
+省略第三个参数，只取出最大符合度的一系列记录。第三个参数为-1时，只取出完全符合所述标签的一系列记录。
+<font color="red">三种词库的内存调用：</font>
+使用内存调用词库可以提升30倍以上的速度，并且内存词库路径支持URL，但是修改词库内容必须重新载入才可执行新词库（重启插件或点击保存或执行初始化变量）
+使用方法如下：词库变量后加上“-内存”即可，如【本地词库-内存】、【标签词库-内存xxxx】、【高级词库-内存xxxx】。
+
+&gt;内置词库&lt;
+<font color="red">说明：</font>以下两者为插件自带词库，用法同【本地词库】
+<font color="red">【聊天女仆】</font>
+<font color="red">【图灵(APIkey)】</font> 省略则使用默认 APIkey
+
+&gt;内置音源&lt;
+<font color="red">【度丫丫】</font>说明：
+<font color="red">【度丫丫】</font>填在回复中，可以将回复的内容转换成度丫丫的语音（语音合成）
+
+&gt;语音时代&lt;
+<font color="red">说明：</font>
+<font color="red">对接语音时代</font> 支持调用语音时代的词库和音源。
+详情请下载文档：<a href="https://web.archive.org/web/20200810084155/http://myepk.club/LD.docx">铃心自定义-语音时代  开启说明.docx</a>
+
+&gt;未匹配回复&lt;
+<font color="red">【其他】</font>说明：
+<font color="red">【其他】</font>填在关键词中，
+如果发送的消息匹配不到关键词，会触发关键词为<font color="red">【其他】</font>的回复。
+
+&gt;随机一言&lt;
+<font color="red">【随机一言】</font>说明：
+<font color="red">【随机一言】</font>填写在回复中，从指定文本中随机选出一条(一行属于一条)。
+指定文本：本插件应用目录下: 随机一言.txt
+
+&gt;关键词监控&lt;
+<font color="red">[一/二/...五级敏感词]、【自定义组一/二/三】</font>说明
+请配合关键词监控使用！
+关键词监控：监控发言是否存在已设关键词，如果存在，将关键词所属组作为新的消息。
+如：敏感词监控 一级敏感词 添加“测试”  然后如果机器人接收到含有测试的消息 
+则将本条消息看做 <font color="red">[一级敏感词]</font> ，然后调用关键词为<font color="red">[一级敏感词]</font> 下的处理方式和回复。
+
+&gt;数据类&lt;
+<font color="red">【积分(±X)】</font>说明：填写在回复里，X表示具体的数或变量。
+<font color="red">【积分+X】</font>表示触发该回复积分+X, 并且返回对应的X。
+<font color="red">【积分-X】</font>表示触发该回复减少X积分，并返回对应的X，积分不够则会提示积分不足。 
+<font color="red">【积分】</font>表示触发者当前积分。
+<font color="red">【积分(±X)<font size="2" color="blue"><b>&gt;=&lt;</b></font>[指定QQ]】</font> 在后面加上 <font size="2" color="blue"><b>&gt;=&lt;</b></font>[指定QQ]   相当于把触发者换成[指定QQ]
+<font color="red">【数据[数据名]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[改动方式]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[改动内容]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[改动类型]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[参数值]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[数据类型]】</font> 对目标数据进行增删改查以及获取排行等。
+[数据名]：自定义的数据名称。
+[改动方式]：为“增加/减少/更改/获取/排行”之一，可空，默认获取。
+[改动内容]：要“增加/减少/更改”的数值。方式为“排行”时，代表取出的个数。可空。
+[改动类型]：1：群，同一个群共用一个数据。 2：QQ，同一个QQ共用一个数据； 3:群内QQ，同一个群的不同QQ用不同的数据。可空，默认3。
+[参数值]：“增加/获取”时，[参数值]代表初始值。“减少”时，[参数值]代表最小值。可空，默认0
+[数据类型]：0：数值；1：文本，若为文本，“减少/排行”无效；2：每日刷新的数值，每日会重置数值为默认值。可空，默认0
+返回值：为数值时，“增加/减少” 将返回修改后结果，若“减少”后小于最小值，返回假。
+
+&gt;传递变量&lt;
+<font color="red">【传递】、【传递变量(x)】</font>说明：全部填写在回复中
+将回复用<font color="red">【传递】</font>分割成若干条，最终输出的是最后一条的结果。
+若某条中存在<font color="red">【传递变量】</font>则该变量的值表示上一条的执行结果。
+若某条中存在<font color="red">【传递变量x】</font> x为数字，则该变量的值表示第x条的执行结果(x必须小于当前条序)。为负值时，表示当前位置向前第|x|条执行结果。
+使用<font color="red">【跳出传递】</font>可跳过传递。
+使用<font color="red">【内返回[返回结果]】</font>可重置当前传递为[返回结果]。
+
+&gt;自定义变量&lt;
+<font color="red">【变量[自定义名称]】</font>说明：
+<font color="red">【变量[自定义名称]】</font>调用获取变量[自定义名称]的值。可把【变量[自定义名称]】写在关键词里，来给变量初值。
+<font color="red">【更新变量[自定义名称]】</font>重新来获取变量[自定义名称]的初值。
+<font color="red">【赋值变量[自定义名称]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[赋值内容]】</font>将[赋值内容]赋值给变量[自定义名称]
+
+&gt;自定义常量&lt;
+<font color="red">【常量[自定义名称]】</font>说明：
+<font color="red">【常量[自定义名称]】</font>调用获取常量[自定义名称]的值。可把【常量[自定义名称]】写在关键词里，来给常量初值。
+<font color="red">【更新常量[自定义名称]】</font>重新来获取常量[自定义名称]的初值。
+<font color="red">【赋值常量[自定义名称]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[赋值内容]】</font>将[赋值内容]赋值给常量[自定义名称]。
+补充说明：常量即全局变量，在全局生效。而变量仅在当前回复下生效。
+
+&gt;自定义函数&lt;
+1、增加函数：<font color="red">【函数[函数名称]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[代码体]】</font>
+2、增加全局函数：<font color="red">【函数全局[函数名称]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[代码体]】</font>
+3、执行函数：<font color="red">【[函数名称][参数1]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[参数2]...】</font>
+4、代码体内可以用[参数1]、[参数2]...来代替传进来的参数。
+5、两者函数一旦增加成功，都全局生效，除非重启插件。
+6、两者区别是：执行增加已添加的全局函数会直接跳过，而非全局函数则会替换。
+7、推荐在初始化事件中执行增加函数。
+8、举例：【函数测试<font size="2" color="blue"><b>&gt;=&lt;</b></font>[参数1]+[参数2]的结果为：【计算[参数1]+[参数2]】】  【测试1<font size="2" color="blue"><b>&gt;=&lt;</b></font>2】
+
+&gt;文档操作&lt;
+<font color="red">【取出一行[来源]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[行数]】</font>从[来源]中取出第[行数]行文本。如果[行数]为 0 则随机取出一行。如果[行数]为负，取出倒数第|[行数]|行
+<font color="red">【删除一行[来源]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[内容]】</font>当[内容]为行数时，从[来源]中删除第[内容]行文本。如果[内容]为负，删除倒数第|[行数]|行
+当[内容]为文本时，从[来源]中删除第一次出现[内容]的这一行。 如果[内容]省略或为0 删除最后一行。
+<font color="red">【取出行数[来源]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[指定文本]】</font> 取出[指定文本]在[来源]的行数，失败返回-1 。如果省略最后一个参数，取出[来源]总行数
+<font color="red">【插入一行[来源]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[插入内容]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[行数]】</font>将[插入内容]插入到[来源]第[行数]行之前，
+如果省略最后一个参数，插入到最后一行后。如果[行数]为负，插入到倒数第[行数]行前。
+<font size="2" color="blue"><b>注：</b></font>所有的[来源]均可以为文件路径、网络链接、一串文本。 如果是文件路径，插入/删除时返回的是插入/删除的那一行，非文件路径返回的是整个文本。
+文档编码请使用ANSI编码（即GBK GB2312 GB18030）
+<font color="red">【行序】</font>表示上一次取出一行变量所取文本的行序。
+
+&gt;Json解析&lt;
+<font color="red">说明：</font> 对Json文本进行解析。
+<font color="red">【Json解析[来源]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[属性路径表达式]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取出类型]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取出属性]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[属性选择器]】</font> 将[来源]解析并按照指定路径表达式取出指定格式文本。
+[来源]：可以为文本路径（必须ansi编码）/Json文本/网络URL。 
+[属性路径表达式]：可以为以下格式： [0].a.b.c/a[1].a.b[2].c/[all].a.b.c[all]  包含[all]则取该属性下所有子属性。
+[取出类型]：可以为[取出所有]  [随机取出]  [随机取x]  [取出前x]  [取出后x]，即取出所有匹配结果/随机取出/随机取x条/取前x条/取后x条。为空取所有，请带上[]。
+[取出属性]：可以为以下格式：a/a|b|c  或者填写[所有属性]取全部属性，请带上[]。为空取父属性。
+[属性选择器]：筛选出符合选择器的结果。为空不筛选。多个选择器用|(或者) 或 &amp;(并且) 分隔。
+选择器格式：[Rx][比较符号][比较参数]。[Rx] 中 x 表示多个属性中的第x个属性。[比较参数]、[Rx] 都需要加上[]。
+[比较符号]包括：=(值等)、==(全等)、!=(不等)、&gt;=(大于等于)、&lt;=(小于等于)、&gt;(大于)、&lt;(小于)、in(包含)、!in(不包含)、offin(被包含)、!offin(不被包含)、reg(正则匹配)、!reg(正则不匹配)
+如：【Json解析{"data":[15,20,30,50,100]}&gt;=&lt;data[all]&gt;=&lt;&gt;=&lt;&gt;=&lt;[R1]&gt;[20]】
+在取出结果中，多条换行分割开，多个属性"|"分割开，数组多个成员","分割开。
+
+&gt;浏览器支持&lt;
+<font color="red">说明：</font> 本类函数需要下载“<a href="https://web.archive.org/web/20200810084155/https://www.lanzous.com/iat17yb">node.dll</a>”放在 bin 目录。
+<font color="red">【Web-创建[来源]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[UA标识]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[是否全局]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[宽高]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[Cookies]】</font>以指定UA和cookie打开指定网页，返回对应Web标识，以供下面函数调用。
+[宽高]格式：（宽，高），若空为屏幕宽高。 [是否全局]：若为真，则打开相同的来源则直接获取上一次打开的。
+<font color="red">【Web-截图[Web标识]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[左边]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[顶边]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[宽度]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[高度]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[质量]】</font>以指定宽高位置来截取网页。[质量]为1-100整数。
+[左边]、[顶边]：可空，默认0 。[宽度]、[高度]：可空，默认由创建指定的宽高。
+<font color="red">【Web-获取[Web标识]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[欲获取属性]】</font>获取指定Web属性，[欲获取属性]可为：标题、网址、UA、Cookie、源码、下载链接。
+<font color="red">【Web-读取[Web标识]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[JS选择器]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[框架ID]】</font>通过[JS选择器]获取指定元素的文本元素，若多个返回首个。
+<font color="red">【Web-Act1[Web标识]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[动作]】</font>执行浏览器动作，[动作]包括：前进、后退、刷新、停止、清除Cookie。
+<font color="red">【Web-Act2[Web标识]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[动作]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[动作参数]】</font>执行带参数的浏览器动作，并为其传递参数。
+[动作]包括：缩放(倍率)、左右滚动(长度)、上下滚动(长度)、设Cookie(Cookie)、设UA(UA)。括号里的表示[动作参数]的意义。
+<font color="red">【Web-代理[Web标识]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[代理类型]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[代理地址]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[用户名]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[密码]】</font> 设置当前Web代理，[代理地址]：ip:端口。
+[代理类型]：0 无代理、1 Http代理、2 Socks4代理、3 Socks4A代理、4 Socks5代理、5 Socks5HostName代理。
+<font color="red">【Web-JS运行[Web标识]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[JS代码]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[框架ID]】</font>在指定网页运行指定的JS代码， 最外层的return可代表本函数返回。
+<font color="red">【Web-JS执行[Web标识]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[JS函数]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[框架ID]】</font>在指定网页执行指定的JS函数，格式如： xxxx(xx,xxx)。
+<font color="red">【Web-编码[Web标识]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[编码]】</font> 为指定Web设置返回的文本编码，支持：utf-8、ansi
+<font color="red">【Web-释放[Web标识]】</font>释放指定Web内存。
+注：1.[Web标识]可以为空，在用JS编程的时候，空置[Web标识]将处理的更快速。
+    2.[框架ID]在有iframe元素时使用，表示在第[框架ID]个iframe元素中运行函数。
+
+&gt;JS解析&lt;
+<font color="red">说明：</font> 解析JS代码并调用目标方法。
+<font color="red">【JS解析[来源]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[JS方法]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[参数1]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[参数2]...】</font> 将[来源]解析并执行指定方法。
+[来源]：可以为文件路径/JS代码/JSurl。
+[JS方法]：不必要带括号。
+[参数]：可以有多个，也可以没有。
+注意：传递的参数类型都是字符串型，在调用时请注意类型转换。
+
+&gt;SQL操作&lt;
+<font color="red">说明：</font> 对sqlite数据库进行读取或者执行SQL语句，不存在自动创建。
+<font color="red">【SQL-执行[数据库路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[SQL语句]】</font> 多个[SQL语句]之间请以半角分号“;”隔开
+<font color="red">【SQL-读取[数据库路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[SQL语句](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[结果字段1]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[结果字段2]...)】</font> [结果字段]参数可无限添加，返回的结果中多个字段';'分隔，多条记录换行分割。
+多个字段时，中的';' 被替换成 '#fh' 注意自行转换。省略结果字段取结果所有字段。
+若读取多条多个字段的数据，推荐用'fori'和'分割取出'处理。
+
+&gt;文件操作&lt;
+<font color="red">【读入[文件路径]】</font> 读入指定位置的文件，返回文本形式。
+<font color="red">【写出[欲写内容]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[文件路径]】</font> 将[欲写内容]写入[文件路径]。（不存在文件自动创建，不存在目录自行创建）
+<font color="red">【读配置[文件路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[配置节]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[配置项]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[默认值]】</font>  读取指定[文件路径]配置文件中指定[配置节]下[配置项]的值。不存在默认为[默认值]
+<font color="red">【写配置[文件路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[配置节]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[配置项]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[写入值]】</font>  写入指定[文件路径]配置文件中指定[配置节]下[配置项]的值。 <font size="2" color="blue"><b>&gt;=&lt;</b></font>[配置项] 省略则删除配置节下内容。  <font size="2" color="blue"><b>&gt;=&lt;</b></font>[写入值] 省略则删除配置项。
+<font color="red">【取配置[文件路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[配置节]】</font>取出指定[配置节]下所有内容。
+<font color="red">【取配节[文件路径]】</font>取出指定[文件路径]下所有配置节。
+
+&gt;常用变量2&lt;
+<font color="red">【随机数X-Y】</font> 取X-Y之间的一个随机数(不支持负数) 
+<font color="red">【随机数X<font size="2" color="blue"><b>&gt;=&lt;</b></font>Y】</font> 取X-Y之间的一个随机数(支持负数) 
+<font color="red">【补位随机数X-Y】</font> 取X-Y之间的一个随机数，并且生成的随机数位数与y相同，位数不够高位补零。
+<font color="red">【随机字符】</font> 取一个随机字符（a-z,A-Z,0-9）
+<font color="red">【运行目录】</font> 取当前机器人运行目录（结尾不带\）。
+<font color="red">【应用目录】</font> 取插件配置的文件目录（结尾带有\）。
+<font color="red">【机器人Cookie([目标域名])】</font> 取机器人在[目标域名]上的Cookies。请谨慎使用！
+<font color="red">【机器人CsrfToken】</font> 取机器人CsrfToken 谨慎使用！
+<font color="red">【图链】</font> 代表机器人接收到的上一个图片的链接。
+<font color="red">【图链[目标]】</font> 提取[目标]的图片链接，支持酷Q图片码、文件路径。
+<font color="red">【图链[目标]<font size="2" color="blue"><b>&gt;=&lt;</b></font>二维码】</font> 提取[目标]二维码链接,支持酷Q图片码、文件路径。
+<font color="red">【初始化】</font> 触发后重新加载数据（利用变量修改配置后请调用）
+<font color="red">【序号】</font> 每次触发后,【序号】的值+1 ,从1开始(此变量只在同一回复下递增),可用【序号x】将【序号】的值改为x。
+
+&gt;网页访问变量&lt;
+<font color="red">【访问(-GBK/UTF)[网址]】</font> GBK/UTF是目标网址的编码方式，返回网页源码。
+<font color="red">【超级访问-[GET/POST]-[GBK/UTF][网址]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[提交数据]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[提交Cookies]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[附加协议头]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[字节集提交]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[代理地址]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[禁止重定向]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[返回Cookie]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[返回协议头]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[返回字节集]】</font>  利用WinInet 访问网页  返回网页源码。
+<font color="red">【对象访问-[GET/POST]-[GBK/UTF][网址]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[提交数据]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[提交Cookies]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[附加协议头]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[代理地址]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[禁止重定向]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[返回Cookie]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[返回协议头]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[返回字节集]】</font>  利用WinHttp对象 访问网页  返回网页源码。
+[GET/POST]:可空，空置的时候需要连带前面的'-'一起省略，默认GET。
+[GBK/UTF]：可空，空置的时候需要连带前面的'-'一起省略，默认自动解码。
+[网址]：欲获取源码的网址。
+[提交数据]：可空。
+[提交Cookies]：可空。
+[附加协议头]：可空。
+[字节集提交]：即提交字节集的文本形式，可空。
+[代理地址]：格式：IP:端口，可空。
+[禁止重定向]：可为 真/假，可空，默认假。
+[返回Cookie]：将返回的cookie储存在变量[返回Cookie]中，可空。
+[返回协议头]：将返回的协议头储存在变量[返回协议头]中，可空。
+[返回字节集]：若非空则本函数无返回，将返回到的字节集存放在变量[返回字节集]中，返回的变量可填在“图片/语音/写出/取MD5/HexE/转为文本/编码BASE64”中，可空
+<font color="red">【验证图片[URL]<font size="2" color="blue"><b>&gt;=&lt;</b></font>([提交cookie]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[提交方式]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[提交文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[提交协议头])】</font>  提交验证信息获得图片，可用于获得验证码等， [提交方式] 0:GET; 1:POST ,后四个参数可空。返回图片。
+
+&gt;文本编码&lt;
+<font color="red">【编码(-真/假-真/假)XXX】</font>将XXX编码为URL编码。第一个真/假为 是否不编码数字和字母  第二个真/假为 是否先转换为UTF-8再编码。获得对应的编码,省略默认“-真-真”。
+<font color="red">【编码到USC2XXX】</font>将XXX编码为USC2编码
+<font color="red">【解码USC2XXX】</font> 将XXX USC2解码
+<font color="red">【解码URL1XXX】</font> 将XXX URL解码(UTF-8)
+<font color="red">【解码URL2XXX】</font> 将XXX URL解码(GBK)
+<font color="red">【解码HTMLXXX】</font> 将XXX 中的HTML转义字符转化成原本格式。（即 以"&amp;"开头以";"结尾的字符串）
+<font color="red">【HexE[要编码文本]】</font>  将[要编码文本]用哈希值（16进制）编码。
+<font color="red">【HexD[要解码文本]】</font>  用哈希编码解码[要解码文本](16进制文本)
+<font color="red">【转码[转码类型]XXX】</font> 将XXX 进行指定转码。
+目前[转码类型]可为 简-繁/繁-简/U8-GB/GB-U8 （U8为UTF8,GB为GBK） 
+<font color="red">【转为文本[字节集]】</font> 将读取的字节集转换为文本（GBK编码）[字节集]支持：[BIN]、通过“读BIN/超级访问/对象访问”返回的变量。。
+
+&gt;图片码&lt;
+<font color="red">图片码转义</font> 发送消息时自动将图片码解析为图片。参数用法同【图片xxx】
+<font color="red">格式：</font>[Pic={来源}]  {来源}可为URL或路径或目录，若为目录随取。请不要加{}。
+
+&gt;Unicode字符&lt;
+<font color="red">Unicode转义</font>  以下格式的代码将被转义成Unicode字符，具体如何转换自行百度--中文转Unicode：
+<font color="red">格式1：</font>[Unicode=&amp;#582;&amp;#11363;&amp;#42816;]
+<font color="red">格式2：</font>[Unicode=&amp;#x247;&amp;#x1D7D;&amp;#xA741;]
+<font color="red">格式3：</font>[Unicode=\u0246\u2c63\ua740]
+
+&gt;算法计算&lt;
+<font color="red">【分割排序[排序文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[分割符号]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[依据序号]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[排序正逆]】</font>  将[排序文本]每行中的文本用[分割符号]分隔成多部分，并且按照第[依据序号]个排序。[依据序号]可空，默认1。[排序正逆]支持：[正序]、[逆序]
+<font color="red">【随机排序[排序文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[分割符号]】</font>  将[排序文本]以[分割符号]为界限，随机进行排序。[分割符号]：可空，默认换行。
+<font color="red">【文本加密[要加密文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[密码]】</font>  用[密码]加密[要加密文本]，密码可空
+<font color="red">【文本解密[要解密文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[密码]】</font>  用[密码]解密[要解密文本]，密码可空
+<font color="red">【统计[被统计文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[统计出现的文本]】</font>  统计[统计出现的文本]在[被统计文本]中出现的次数
+<font color="red">【取MD5[被取目标](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[MD5位数])】</font> 取出目标MD5（大写）
+[被取目标]可为[BIN]/[图BIN]  可为一串文本  可为文件路径  可为网络URL  可为CQ码  可为【图片XXX】/【语音XXX】
+<font color="red">【权重随机数[权重类型]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[权重数值]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[最小值]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[最大值]】</font> 获取某种类型的权重随机数，具体如下：
+[权重类型] 可为：[等差]  [等比]，即对应等差权重和等比权重，当其为[等差]时，若[权重数值]大于0，取到的随机数越大概率越高，概率呈等值增长。小于0相反。
+当[权重类型]为[等比]时，[权重数值]小于0自动取绝对值。若小于1，取到的随机数越大概率越高，相连两数概率比为[权重数值]。大于1相反。
+<font color="red">【非重随机数x-y(<font size="2" color="blue"><b>&gt;=&lt;</b></font>[持续时间]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[最大上限])】</font> 取一个随机数，如果在近期取得的记录中不存在它，则返回它，否则再取再判断。
+[持续时间]：从第一次取出开始，超过[持续时间]（单位分钟）后，已记录的随机数清空，为空默认20分钟。
+[最大上限]：最多再取[最大上限]次，如果这么多次还没取到，则清空记录的随机数，从新开始。
+<font color="red">【进制[待转化数值]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[原数值进制]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[目标进制]】</font> 将[待转化数值]转化为指定进制，[进制] 支持 2 4 8 10 16 32 64也可用 二 八 十 十六 三十二 六十四。
+<font color="red">【计算[计算公式]】</font> 将[计算公式]计算出结果。支持符号：加 +   减 -   乘 *(需要用#xh转义) ×   除 / ÷   括号 （）()
+另外还支持：  求余 %   求整 \   求次方 ^   如：4%3=1  4\3=1 4^3=64
+支持分布运算：符号，或,  如：4+3，×5，-7 相当于 ((4+3)×5)-7
+支持四舍五入：符号@  x@y  表示：将x四舍五入到相对于个位的第y位。
+       y大于0，舍入到小数点后y位；y=0，舍入到整数；y小于0，舍入到小数点前|y|位(需要带上括号)。
+支持位运算：  左位移 &lt;&lt;   右位移 &gt;&gt;   位或 or   位与 and   位异或 xor
+<font color="red">【补位[待补位文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[结果长度]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[补位字符]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[结尾/开头]】</font> 将长度不足[结果长度]的[待补位文本]用[补位字符]在[结尾/开头]填补。
+
+
+&gt;时间类&lt;
+<font color="red">【时间戳转文本[时间戳]】</font> 将[时间戳]转化为文本 （13/10位均可）
+<font color="red">【现行日期(-年/月/日/星期)】</font> 取系统时间,省略括号及括住的内容取全部。
+<font color="red">【现行时间(-时/分/秒)】</font>当前系统时间,省略括号及括住的内容取全部。
+<font color="red">【13位时间戳】</font> 取当前时间的13位时间戳
+<font color="red">【10位时间戳】</font> 取当前时间的10位时间戳
+<font color="red">【时间间隔[时间文本1]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[时间文本2]】</font>返回[时间文本1]与[时间文本2]相差的秒数。
+支持的时间文本格式：
+  1、1973年11月15日12时30分25秒
+  2、1973/11/15 12:30:25
+  3、1973/11/15/12/30/25
+  4、1973/11/15/12:30:25
+  5、1973-11-15-12-30-25
+  6、1973-11-15-12:30:25
+  7、1973.11.15 12:30:25
+  8、19731115123025
+
+
+&gt;高级文本操作&lt;
+<font color="red">【隐藏[内容]】</font> 隐藏[内容]的执行结果。
+<font color="red">【分割取出[被分割文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[分隔符]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取出序号]】</font> 将[被分割文本]用[分割符]分割成n份，取出第[取出序号]份
+若[取出序号]&lt;0 倒取。若[取出序号]=0 随机取出。
+<font color="red">【范围取整[数值]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[下界]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[上界]】</font> 若[数值]小于[下界]返回[下界];若[数值]大于[上界]返回[上界];否则返回自身
+[下界]：可空，为空无下界
+[上界]：可空，为空无上界
+<font color="red">【取整[被取文本]】</font>  取出[被取文本]中出现的所有数字。
+<font color="red">【取中间XX1<font size="2" color="blue"><b>&gt;=&lt;</b></font>XX2<font size="2" color="blue"><b>&gt;=&lt;</b></font>XX3<font size="2" color="blue"><b>&gt;=&lt;</b></font>XX4】</font> XX1为被取文本，XX2为欲取出文本左边的文本，XX3为欲取出文本右边的文本，XX4为取出第XX4个符合条件的文本。
+当XX4为all时，取出所有符合条件的文本，并且自动填写序号开头。当<font size="2" color="blue"><b>&gt;=&lt;</b></font>XX4 不填时，取出随机一个文本。
+当XX4为all[分割符号]时，取出所有符合条件的文本，并且每个文本之间用[分割符号]分割。
+当XX4为top[条数]时，取出符合条件的前[条数]条文本。当XX4为bot[条数]时，取出符合条件的最后[条数]条文本。
+<font color="red">【正则重构[重构文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[表达式]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[重构格式]】</font>  将[重构文本]根据[表达式]析取，并按照[重构格式]规整。
+在[重构格式]中，[匹配x] 代表[表达式]中，第x子表达式。不填x表示整个匹配文本。
+<font color="red">【正则[表达式]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[被搜索的文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[序次](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[替换文本])】</font>    匹配结果数组中，第[序次]个符合[表达式]的文本   最后一项为空表示取随机一个（注意把*替换为#xh ，否则发送出错）
+当[序次]为all时，取出所有符合条件的文本，并且自动填写序号开头。当<font size="2" color="blue"><b>&gt;=&lt;</b></font>[序次] 不填时，取出随机一个文本。
+当[序次]为all[分割符号]时，取出所有符合条件的文本，并且每个文本之间用[分割符号]分割。
+当[序次]为top[条数]时，取出符合条件的前[条数]条文本。当[序次]为bot[条数]时，取出符合条件的最后[条数]条文本。
+当[替换文本]不为空时，则表示当前为正则替换，此时[序次]表示替换的次数，小于等于0全部替换，大于0替换[序次]次。
+<font color="red">【子正则[表达式]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[被搜索的文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[序次]】</font>   第一个符合[表达式]的文本中，第[序次]个<b>子表达式</b>所匹配的文本   最后一项为空表示第一个 ，为0取出整个表达式匹配的文本（注意把*替换为#xh ，否则发送出错）
+<font color="red">【删除[欲被删除文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[删除文本开头]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[删除文本结尾]】</font> 删除[欲被删除文本]中的所有以[删除文本开头]开头，以[删除文本结尾]结尾的文本。
+<font color="red">【选择[序号或逻辑组]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[返回1]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[返回2]……】</font> 从多个结果中按照约定选择指定返回。
+当[序号或逻辑组]为数值的时候，选择第[序号或逻辑组]个返回。
+当[序号或逻辑组]为逻辑组时，选择第 "首个成立的逻辑表达式序号" 个返回。
+逻辑组格式：[逻辑表达式1]||[逻辑表达式2]||[逻辑表达式3].... 逻辑表达式请用【逻辑】包裹。
+如果都不成立选择最后一个。
+逻辑组中要用到“||”可以用“#hz”代替。
+<font color="red">【替换[被替换内容]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[被替换文本](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[替换文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[替换次数]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[并列替换])】</font> 将[被替换内容]中的[被替换文本]替换为[替换文本]，总共替换[替换次数]次。
+省略第三个参数删除。省略第四个参数全部替换。
+多个 [被替换文本] 和 [替换文本] 可用 || 分隔。
+如果实际[用于替换的参数]中有||，可用#hz 代替。
+若[并列替换]为“[并列]”时，则同时进行替换。
+
+&gt;比较判断&lt;
+<font color="red">【判空[被判断文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[为空替换文本]】</font> 如果[被判断文本]为空，则此变量表示的值为[为空替换文本]，否则为[被判断文本]
+<font color="red">【判断[被比较文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[比较文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[不相同返回文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[相同返回文本]】</font>  如果[被比较文本]和[比较文本]值不相同，返回[不相同返回文本] 否则返回[相同返回文本]  
+<font color="red">【比较[被比较数值]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[比较数值]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[前者大返回]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[否则返回]】</font>  如果[被比较数值]比[比较文本]比较数值大，返回[前者大返回] 否则返回[否则返回]  
+<font color="red">【判含[被判断文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[被包含文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[不包含返回]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[包含返回]】</font>  如果[被判断文本]不含有[被包含文本]，返回[不包含返回] 否则返回[包含返回]  
+若想判断多个[被包含文本]，用|分割，则这些[被包含文本]只要有一个被包含即被认为是被包含。
+若将[被包含文本]用&amp;分割，则这些[被包含文本]必须全部被包含才被认为是被包含。
+若实际[被包含文本]中有&amp; | 时可用 #bq #hz 来代替他们。
+<font color="red">【判真[逻辑值]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[为真返回]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[非真返回]】</font>  如果[逻辑值]为真，返回[为真返回] 否则返回[非真返回]。推荐搭配逻辑变量使用。
+
+
+&gt;循环变量&lt;
+<font color="red">【循环[循环次数]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[循环体]】</font>  重复执行[循环次数]次[循环体] 返回每次得到的结果之和。
+<font color="red">【判循[逻辑值]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[循环体]】</font>  当[逻辑值]为真时，重复执行[循环体]。推荐搭配逻辑变量使用。
+<font color="red">【Fori[遍历体]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[遍历文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[分隔符]】</font>  将[遍历文本]用[分隔符]分隔成n份，每份作为变量[内容](加[])在[遍历体]中执行一次，返回所有执行结果之和。
+<font color="red">[序号]</font> 仅在循环体/遍历体内生效，表示其已经执行的次数。
+<font color="red">【跳出】</font> 跳出循环，循环体不再执行。
+<font color="red">【继续】</font> 跳到循环尾，本次循环体不再执行。
+
+&gt;逻辑变量&lt;
+<font color="red">【逻辑[表达式]】</font> 若逻辑正确返回真，否则返回假。
+支持符号：
+“或”/“||”, “且”/“&amp;&amp;”, “+”, “-”, “*”(#xh代替), “\”, “/”, “%”,“(”,“)”
+“=”(值等), “==”(全等), “!=”, “!==”, “&gt;”, “&lt;”, “&gt;=”, “&lt;=”
+“in”(包含), “!in”(不包含), “reg”(正则匹配), “!reg”(正则不包含)
+注："["、"]"相当于其他语言的引号，其括起来表示字符串，若字符串中确定没有上述符号可以不加。字符串中的"["、"]"可用"&amp;#91;" "&amp;#93;"  代替。
+
+&gt;IO流&lt;
+<font color="red">【输入流[标识类型]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[最大时间]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[最大次数]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[单Q次数]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[是否继续匹配]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[回调函数]】</font>  程序等待[最大时间]秒，等待消息输入，直到输入[最大次数]次或超过[最大时间]，返回输入的内容。
+[标识类型]： 1：群，同一个群共用一个缓存区。 2：QQ，同一个QQ共用一个缓存区； 3:群内QQ，同一个群的不同QQ用不同的缓存区。 可空，默认2。
+[最大时间]：程序等待时间，可空，默认30。
+[最大次数]：总输入次数上限，为0表示无限次。可空，默认1。
+[单Q次数]: 仅在[标识类型]为1时有效，指单Q最多输入[单Q次数]次，可空，默认0，即无限次。
+[是否继续匹配]：进入输入流的消息是否继续匹配其他关键词。若为真则继续匹配，否则不匹配。可空，默认假。
+[回调函数]：每当有消息输入时，即可执行函数名为[回调函数]的函数，并将消息内容当做[参数1]传递给函数。可空，默认不执行回调。
+若[回调函数]返回1，重置输入流；返回-1，结束输入流；返回其他，正常执行输入流。
+<font color="red">【输出流[加入文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[标识类型]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[输出类型]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[返回msgID]】</font>  将[加入文本]放入输出流缓存区，并可选继续加入或者立即释放。
+[标识类型]： 1：群，同一个群共用一个缓存区。 2：QQ，同一个QQ共用一个缓存区； 3:群内QQ，同一个群的不同QQ用不同的缓存区。 可空，默认2。
+[输出类型]： 0：立即输出，不将文本放入缓存区直接输出。 1：加入缓存区，将文本加入缓存区等待输出。 2：释放缓存区，立即释放缓存区中内容，此时[加入文本]无效。 可空，默认0.
+[返回msgID]：将输出消息的msgID赋值给变量[返回msgID]。可空，默认不返回。
+<font color="red">【获取流[索引值]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[获取流类型]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[标识类型]】</font>  获取指定流缓存区的特定内容。输出流释放后不能再获取到。
+参数：
+[标识类型]： 1：群，同一个群共用一个缓存区。 2：QQ，同一个QQ共用一个缓存区； 3:群内QQ，同一个群的不同QQ用不同的缓存区。 可空，默认2。
+[获取流类型]：0：输入流  1：输出流。 可空，默认0   [索引值]：从1开始，为0取全部(多条[IO]分割)，可空，默认0。
+
+&gt;大量数据读取&lt;
+<font color="red">【Forf[遍历体]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[文件路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[修改模式]】</font>打开[文件路径]，按行逐一读取数据，每行作为变量[内容](加[])在[遍历体]中执行一次，返回所有执行结果之和。"
+用【Forf-内存xxxx】可以实现更快的遍历，但是只在初始化时才能更新且不支持修改模式。
+[修改模式]：若为“是”或“真”，则修改原文件，但不返回。可空，默认非修改模式。
+<font color="red">【索引表-创建[文件路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[索引项数]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[分割符号]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[数值索引]】</font>将[文件路径]读入内存索引表，以供后续调用，推荐在初始化事件下使用。
+本类变量可用处理上百万条数据，创建过程可能会慢，再次创建会覆盖之前创建的。
+[文件路径]：本地文件路径，ANSI编码。
+文件格式：[索引1][分割符号][索引2][分割符号][索引3]...[分割符号][其余字段]，下个记录另起一行。
+[索引项数]: 每条记录添加索引的条数。
+[分割符号]：多个索引之间用[分割符号]分隔。可空，默认空格。
+[数值索引]：如果某个索引确定为数值，可使用本参数来极大加快检索速度。可空，默认不使用数值索引。
+<font color="red">【索引表-搜寻[文件路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[搜寻文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[搜寻模式]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[返回模式]】</font>
+搜寻已载入内存的[文件路径]中，按照指定规则匹配[搜寻文本]的文本。
+本类变量可用处理上百万条数据，使用前确保对应[文件路径]的索引表已被创建。
+[文件路径]：使用【索引表-创建】函数时的文件路径。
+[搜寻文本]：用来进行匹配的文本。
+[搜寻模式]：可用类型：[数值模式]、[首索引模式]、[完全模式]、[模糊模式{模糊度}],四种模式处理速度依次减慢。
+[数值模式]：最快的模式，100w条数据仅需0-20ms，前提是必须存在数值索引，并且由【索引表-创建】所指定[数值索引]参数。
+            当[搜寻文本]与某条记录中[数值索引]项相同时，即匹配。
+[首索引模式]：仅将[搜寻文本]与首个索引项进行匹配，相同即匹配。
+[完全模式]：将[搜寻文本]与每个索引项进行匹配，其中一个相同即匹配。
+[模糊模式{模糊度}]：将[搜寻文本]与每个索引项进行匹配，若大于等于{模糊度}个索引项包含于[搜寻文本]中即匹配。
+[返回模式]：可用类型：[首个返回]、[全部返回]、[随机返回]，三种模式处理速度依次减慢。
+[首个返回]：处理速度最快，当遇见符合的就返回结果。
+[全部返回]、[随机返回]：每条记录判断匹配后，返回匹配中的全部/随机一个。
+
+&gt;文本行操作&lt;
+<font color="red">【行操作-删空白行[被删文本]】</font> 删除指定文本中的空白行。
+<font color="red">【行操作-删重复行[被删文本]】</font> 删除指定文本中的重复出现的行。
+<font color="red">【行操作-删首尾空(-首/尾)[被删文本]】</font> 删除每行开头或者结尾的全角和半角空格。省略(-首/尾)开头和结尾都删除
+<font color="red">【行操作-删指定行[被删文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[开头行序](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[结尾行序])】</font> 删除指定文本中的指定行。
+<font color="red">【行操作-替换指定[被替文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[开头行序](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[结尾行序]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[替换文本])】</font> 替换指定文本中的指定行。 
+<font color="red">【行操作-插入文本[被插文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[插入内容](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[行数]】)</font> 插入文本到指定行前。同变量：【插入一行xxx】
+<font color="red">【行操作-按字拆行[被拆文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[每行字数]】</font> 将指定文本按照字数拆分成多行。
+<font color="red">【行操作-每行相连[被连文本1]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[被连文本2](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[连接字符])】</font> 将两个文本对应行相接连起来。
+<font color="red">【行操作-每行排序[被排文本](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[排序顺逆])】</font> 将每行文本以首字母按照表字母表排序。[排序顺逆] 为[顺序]或[逆序]，默认顺序。
+<font color="red">【行操作-每行反转[被转文本]】</font> 将每行文本左右倒置。
+<font color="red">【行操作-前后反转[被转文本]】</font> 将每行文本行序掉转。
+<font color="red">【行操作-按行分页[被分页文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[每页行数]】</font>  将[被分页文本]每[每页行数]行用[分页]分隔。"
+<font color="red">【行操作-取出指定[被取文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[开头行序]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[结尾行序]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取出类型]】</font> 取出指定文本中的指定行。
+[取出类型]可为: [取出所有]  [随机取出]  [随机取x]  [取出前x]  [取出后x]，即取出所有指定行/随机取出/随机取x条/取前x条/取后x条。请带上[]。
+<font color="red">【行操作-添加文本[被添文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[添加类型]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[添加参数]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[添加文本]】</font> 在文本中每行的指定位置或指定文本处添加某文本。
+[添加类型]可为: [文本之前]  [文本之后]  [某位置前]，即：添加在[添加参数]之前/之后/位置前。[某位置前]时，[添加参数]表示添加到的位置。请带上[]。
+<font color="red">【行操作-替换文本[被替文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[替换类型]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[替换参数1]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[替换参数2](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[替换文本])】</font> 在文本中每行的指定位置或指定文本处替换为某文本。
+[替换类型]可为: [文本之间]  [位置之间]，即：替换[替换参数1]、[替换参数2]中间的文本为[替换文本]。请带上[]。
+[替换类型]也可为: [文本前后]，此时[替换参数1]可为：[文本之前]  [文本之后]，即：将[替换参数2]之前/之后的文本替换为[替换文本]。 请带上[]。
+<font color="red">注释：</font>行序为负表示倒数，结尾行序为0表示最后一行；具体试下便知，不多解释。
+
+&gt;文本操作&lt;
+<font color="red">【文本-取出中间[被取文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[开始位置]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取出长度]】</font> 取出包含指定文本中从指定位置算起指定数量的字符。
+<font color="red">【文本-倒取中间[被取文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[右边文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[左边文本]】</font> 倒着取出指定文本中以指定文本结尾以指定文本开头的文本。
+<font color="red">【文本-取出左边[被取文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取出长度]】</font> 取出指定文本中从左边算起指定数量的字符。
+<font color="red">【文本-取出右边[被取文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取出长度]】</font> 取出指定文本中从右边算起指定数量的字符。
+<font color="red">【文本-取出长度[被取文本]】</font> 取出指定文本数据的长度。
+<font color="red">【文本-寻找文本[被寻文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[欲寻内容](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[开始位置])】</font> 找出指定一文本在另一文本中最先出现的位置。
+<font color="red">【文本-倒找文本[被寻文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[欲寻内容](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[开始位置])】</font> 找出指定一文本在另一文本中最后出现的位置。
+<font color="red">【文本-反转文本[反转文本]】</font> 将指定一文本左右倒置。
+<font color="red">【文本-替换文本[被替文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[开始位置]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[替换长度](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[替换文本])】</font> 将指定文本的某一部分用其它的文本替换。
+<font color="red">【文本-转为大写[转换文本]】</font> 将指定文本的小写字母变为大写。
+<font color="red">【文本-转为小写[转换文本]】</font> 将指定文本的大写字母变为小写。
+<font color="red">【文本-取文本左[被取文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[被寻内容]】</font> 取出指定文本中某文本的左边部分。
+<font color="red">【文本-取文本右[被取文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[被寻内容]】</font> 取出指定文本中某文本的右边部分。
+<font color="red">【文本-中间替换[被取文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[左边文本]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[右边文本](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[替换文本])】</font> 取出指定文本开头和结尾的文本，并且替换为指定文本。
+<font color="red">注释：</font> 一个汉字占两个字符；寻找不到文本返回-1；
+<font color="red">【文本-删首尾空(-首/尾)[被删文本]】</font> 删除开头或者结尾的全角和半角空格。省略(-首/尾)开头和结尾都删除。
+
+&gt;磁盘操作&lt;
+<font color="red">【文件-创建[目录路径]】</font> 创建一个目录。
+<font color="red">【文件-删除[目录或文件路径]】</font> 删除一个目录或者文件。
+<font color="red">【文件-判存[源目录或文件路径]】</font> 判断目录或文件是否存在。返回真或假。
+<font color="red">【文件-移动[源目录或文件路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[新目录或文件路径]】</font> 移动目录或者文件。
+<font color="red">【文件-复制[源目录或文件路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[新目录或文件路径]】</font> 复制目录或者文件。
+<font color="red">【文件-更名[源目录或文件路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[新目录或文件路径]】</font> 更名目录或者文件。
+<font color="red">【文件-搜索[目录]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[包含关键词]】</font>搜索[目录]及其子目录下所有包含[包含关键词]的子目录及文件。省略[包含关键词]取出目录（包括子目录）下所有的子目录及文件。
+<font color="red">【文件-枚举[目录或路径表达式]】</font> 当[目录或路径表达式]为目录时，枚举该目录下所有文件及子目录。当其为路径表达式时，枚举所有符合表达式的文件及子目录。
+<font color="red">【文件-随取[目录或路径表达式]】</font> 当[目录或路径表达式]为目录时，随取一个该目录下的文件或子目录。当其为路径表达式时，随取一个符合表达式的文件或子目录。
+<font color="red">【文件-取值[文件路径]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[取出属性]】</font> 取出[文件路径]的指定属性。[取出属性]可为：格式、类型、大小、创建时间、修改时间、访问时间
+提示：1、目录即文件夹的路径。2、路径表达式可以使用多字符 (*) 和单字符 (?) 通配符来指定多重文件
+
+&gt;图片识文&lt;
+开启图片识别后，自动识别图片上的文字
+在识别图片后 识别结果前会加上前缀[图文]作为新的消息（开启后可能造成卡顿，不推荐开启）
+
+&gt;语音识别&lt;
+开启语音识别后，自动识别语音内容
+在识别语音后 识别结果前会加上前缀[语音]作为新的消息
+
+&gt;回复控制&lt;
+<font color="red">【拦截】</font> 触发<font color="red">【拦截】</font> 后，拦截后续插件处理。
+<font color="red">【清空】</font> 清空前部分代码，后面正常回复。
+<font color="red">【返回[返回结果]】</font> 整体代码直接返回为[返回结果]。
+<font color="red">【重定向[目标QQ](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[目标群]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[子关键词])】</font> 将消息来源重新定义为[目标QQ]、[目标群]。同时也可以重定义[子关键词]。省略则使用原来的，[目标群]填0表示私聊。
+<font color="red"> [分页] </font> 请带上[]。将消息分割为多条消息，逐一发送。
+<font color="red">【概率[百分比]】</font>匹配关键词后，[百分比]概率触发该回复。[百分比] 为1-100之间的整数。
+<font color="red">【继续匹配】</font>执行后清空本条回复，继续向后（更低优先级的关键词）匹配。
+
+&gt;调用回复&lt;
+<font color="red">【回复[关键词](<font size="2" color="blue"><b>&gt;=&lt;</b></font>[子关键词])】</font>[关键词]即关键词列表中的关键词。填写在回复中，代表调用对应[关键词]下的回复，同时传递[子关键词]到目标回复下。（可用#zzk、#yzk来代替【、】）
+<font color="red">【重发XXX】</font>填写在回复中，触发后相当于机器人再次收到内容为<font color="red">XXX</font>的消息。（发送者/群组 不变）。重发后的消息不受各类开关限制。等重发的内容处理完毕才继续执行。
+<font color="red">【重发[RD:QQ]XXX】</font> 重发重定向。将发送者重定向为QQ，请带上[]。
+<font color="red">【线程重发XXX】</font> 同【重发】，只是该重发将启动新的线程，不再等待重发完毕才继续执行。
+<font color="red">重发屏蔽：</font> 即重发指令只执行命令不实施发送消息，具体指令【重发屏蔽xxx】  【线程重发屏蔽xxx】。
+
+&gt;前提回复&lt;
+<font color="red">【前提XXX】</font>说明：
+<font color="red">【前提XXX】</font>填写在关键词中，XXX为已经存在回复的关键词。
+当关键词为XXX的回复触发后，接下来的30s(插件设置里可修改)内的任一消息即可触发关键词为<font color="red">【前提XXX】</font>的回复。
+触发时，此时的子关键词（【内容】）即为所发送的完整的消息。
+<font color="red">【前提QQXXX】</font>说明：
+<font color="red">【前提QQXXX】</font>填写在关键词中，XXX为已经存在回复的关键词。
+当关键词为XXX的回复触发后，发送者接下来发送的任一消息即可触发关键词为<font color="red">【前提QQXXX】</font>的回复。
+触发时，此时的子关键词（【内容】）即为所发送的完整的消息，与原前提不同的是没有时间限制，但是只可触发一次。
+<font color="red">【前提群XXX】</font>说明：
+<font color="red">【前提群XXX】</font>同 【前提QQXXX】 只是可触发者改为 发送者所在群的任一群员。
+<font color="red">多重前提：</font> 即前提套前提，一个前提结束后再次触发另一个前提。
+关键词格式：【前提xxx】、【前提【前提xxx】】、【前提【前提【前提xxx】】】....  
+对应解释：第一个前提、第一个结束后下一次回复触发的第二个前提、第三重前提....
+注意：嵌套部分不需要加QQ/群。
+<font color="red">【前提次数+1】</font>说明：
+<font color="red">【前提次数+1】</font>用在【前提群xxx】或【前提QQxxx】的回复下，执行后，该前提结束后仍下次发言仍可再次触发该前提。
+<font color="red">【前提跳出】</font>说明：
+<font color="red">【前提跳出】</font>用在前提嵌套之间，执行后结束嵌套。
+<font color="blue">注：</font> 本类变量最好用IO流代替。
+
+&gt;制图变量&lt;
+<font color="red">【制图[背景图]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[每行字数][写入数据]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[横坐标]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[纵坐标]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[大小]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[颜色]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[字体]】</font> 后面的5个参数可以省略。
+ [背景图] 可以为图片URL、可以为CQ码、可以为文件路径、可以为【图片XXX】、可以为[BIN]/[图BIN]。 [写入数据] 可以为文本、可以为[BIN]/[图BIN]。
+ 横坐标、纵坐标、大小 是写入文字的横纵坐标和大小。 [每行字数]请带上[]。颜色1-9 分别是 红橙黄绿青蓝紫黑白，其余颜色：
+ 10 藏青  11 墨绿  12 深青  13 红褐  14 紫红  15 褐绿  16 深灰  17 灰色  18 艳青  19 品红
+ 20 蓝灰  21 藏蓝  22 嫩绿  23 青绿  24 黄褐  25 粉红  26 嫩黄  27 银白  28 天蓝  29 灰绿
+ 30 青蓝  31 橙黄  32 桃红  33 芙红  34 深灰 
+ [字体] 可以为：仿宋/黑体/楷体/宋体/微软雅黑/新宋体等 操作系统已经存在的字体。
+如：【制图【运行目录】\data\image\EPK自定义回复\记仇.jpg<font size="2" color="blue"><b>&gt;=&lt;</b></font>[5]今天这个仇我记下了。<font size="2" color="blue"><b>&gt;=&lt;</b></font>50<font size="2" color="blue"><b>&gt;=&lt;</b></font>300<font size="2" color="blue"><b>&gt;=&lt;</b></font>20<font size="2" color="blue"><b>&gt;=&lt;</b></font>0】
+
+&gt;动态链接库（dll）的调用&lt;
+<font color="red">【装载[动态链接库名称]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[DLL公开的函数名]】</font> 装载[动态链接库名称]到内存，同时置当前dll命令执行程序为其内部公开的[DLL公开的函数名]。
+<font color="red">【DLL ([返回类型]<font size="2" color="blue"><b>&gt;=&lt;</b></font>)[参数类型][参数1]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[参数类型][参数2]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[参数类型][参数3]...】</font> 执行上一个装载变量载入的dll中的指定函数。
+<font color="red">注意： </font>
+1、[参数类型]、[返回类型]可为 [文本][整数][逻辑][长整][双小][小数]（即文本型、整数型、逻辑型、长整数型、双精度小数型、小数型）
+2、类型请带上[]，参数不必带。最多可以传递给dll 16个参数。
+3、执行前请装载，同一函数连续调用则不必装载。内置有判断，不用担心同一dll被装载多次。
+4、无返回或不想让其返回，可省略[返回类型]（即括号所括内容）。
+5、重启插件/机器人即可卸载装载的dll
+
+&gt;每次回复调用&lt;
+在应用目录下创建文档: 每次回复.txt 
+每次触发回复都会执行 每次回复.txt 内的代码(用于百变气泡等)。
+
+
+&gt;载入APP&lt;
+<font color="red">【APP [应用名称]】</font>说明：
+<font color="red">【APP [应用名称]】</font>填写在回复中，触发后调用该APP，在初次调用时载入，载入后若想重新载入，请重启插件/机器人。
+[应用名称] 为 酷Q目录\bin\EPK 目录下对应的应用名称。
+<font color="red"> APP 开发 </font> 具体见：<a href="https://web.archive.org/web/20200810084155/http://myepk.club/EPKAppSdk.zip">EPKAppSdk (EPL)</a>
+
+
+&gt;关键词组&lt;
+<font color="red">关键词组</font>  说明：本类变量可以将关键词不同但回复相同的一类关键词回复统一到一条关键词下。
+<font color="red"> [词集xxxx]</font> xxxx为自定义关键词组的名称，填写在关键词处，请加上[]。
+<font color="red"> 1、</font> 该关键词的回复下填写多个关键词，这些关键词用“*”分隔开。
+<font color="red"> 2、</font> 这些关键词的格式可以为：[完全]xxx 、[模糊]xxx 、[前缀]xxx 、[正则]xxx 、xxx 五种格式，请加上[]。
+<font color="red"> 3、</font> 对应四种匹配方式，完全匹配，模糊匹配，前缀匹配，正则匹配，不加匹配方式默认模糊匹配。
+<font color="red"> 4、</font> 其中省略前面的匹配方式即为模糊匹配，正则中要用到“*”请用“#xh”代替。
+<font color="red"> [xxxx] </font> 说明：填写在关键词处，和[词集xxxx] 中的xxxx对应。请加上[]。
+如果触发[词集xxxx]下的关键词，则调用关键词为[xxxx]的回复。
+<font color="red">词集的独立匹配规则：</font> 词集的匹配与关键词匹配相独立，即：一条消息可以同时触发多条词集回复和一条非词集关键词回复。
+<font color="red">全匹配词集：</font> 关键词填写 [全匹配xxx] xxx自定义。 即：所有消息都可匹配本回复。
+
+
+&gt;字节集变量&lt;
+<font color="red"> [图BIN] </font>  代表发送图片的字节集。仅在变量【写出XX】、【超级访问XX】、【制图XXX】中有效。
+<font color="red">【读BIN[参数]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[储存变量]】</font>读取字节集数据，将读取数据存在指定变量中。
+ [参数] 可以为文本、CQ码、文件路径、Url地址或“-UTF[文本]”
+[存储变量]：用来接收读取倒的字节集，返回的变量可填在“图片/语音/写出/取MD5/HexE/转为文本/编码BASE64”中，可空，默认存储到[BIN]中。
+<font color="red"> [BIN] </font>  适用范围同[图BIN] 。[BIN]表示上一个通过【读BIN[XXX]】得到的字节集。
+<font color="red">【解码BASE64XXX<font size="2" color="blue"><b>&gt;=&lt;</b></font>[返回字节集]】</font>将XXX base64解码，解码后的字节集存放在变量[返回字节集]中。
+[返回字节集]：可空，为空存放在[BIN]中。
+<font color="red">【编码BASE64XXX】</font>将XXX编码为base64编码, XXX可包含[BIN]/[图BIN]
+<font color="red">【取字节集中间[BIN]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[欲取字节集前面字节集的文本形式]<font size="2" color="blue"><b>&gt;=&lt;</b></font>[欲取字节集后面字节集的文本形式]】</font>，取出指定字节集，将取后的字节集放进[BIN]中
+
+
+<font color="blue">
+&lt;&lt;&lt;说明文档详见 <a href="https://web.archive.org/web/20200810084155/http://myepk.club/Reply.html">http://myepk.club/Reply.html</a>&gt;&gt;&gt;
+&lt;&lt;&lt;部分变量在核心转义系统前被解释，还有部分变量在核心转义系统后被解释，下面是他们的优先级：&gt;&gt;&gt;
+&lt;&lt;&lt;
+【概率、【权限】、【主人】、【群管】、【管理】、【回复间隔、【一次间隔、【一天上限、【一周上限、【一月上限、"*"、【度丫丫】、【音源、[私聊、【传递】、
+<font color="red">其他函数/变量</font>、[撤回](由【撤回】转变)、[拦截](由【拦截】转变)、[私聊](实际执行私聊变量)、[执行时间]、[分页]
+&gt;&gt;&gt;
+&lt;&lt;&lt;上述"<font color="red">其他函数/变量</font>"即核心转义系统所转义的函数/变量，只有他们支持嵌套其他变量/函数、支持在编辑器中被解释(包括【传递】)、支持重复(包括【传递】、[分页]、"*")。&gt;&gt;&gt;
+</font>
+</pre>
+
+
+
+
+</body></html>
